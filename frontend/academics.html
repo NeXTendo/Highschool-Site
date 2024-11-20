@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="dynamic-header">
+        <div class="logo">Academics</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="admin_portal.html">Admin Portal</a>
+            <a href="news_events.html">News & Events</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Our Academic Programs</h1>
+            <p>Explore courses and faculty across all departments.</p>
+        </section>
+
+        <!-- Department Overview -->
+        <section class="departments">
+            <div class="department-card" data-animate="slide-in">
+                <h2>Science</h2>
+                <p>Physics, Chemistry, Biology, and Environmental Science.</p>
+                <button onclick="openModal('scienceModal')">View Courses</button>
+            </div>
+            <div class="department-card" data-animate="slide-in">
+                <h2>Mathematics</h2>
+                <p>Algebra, Geometry, Calculus, and Statistics.</p>
+                <button onclick="openModal('mathModal')">View Courses</button>
+            </div>
+            <div class="department-card" data-animate="slide-in">
+                <h2>Humanities</h2>
+                <p>History, Literature, Philosophy, and Sociology.</p>
+                <button onclick="openModal('humanitiesModal')">View Courses</button>
+            </div>
+        </section>
+
+        <!-- Modal for each department -->
+        <div id="scienceModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('scienceModal')">&times;</span>
+                <h2>Science Courses</h2>
+                <table class="info-table">
+                    <thead>
+                        <tr><th>Course</th><th>Instructor</th><th>Credits</th><th>Lab Requirement</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Physics</td><td>Dr. Smith</td><td>4</td><td>Yes</td></tr>
+                        <tr><td>Chemistry</td><td>Dr. Allen</td><td>3</td><td>Yes</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+ <!-- Footer -->
+<footer class="dynamic-footer">
+    <div class="footer-container">
+        <!-- Footer Row for Content -->
+        <div class="footer-row">
+            <!-- About Us -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>
+                    Learn more about our mission to inspire and educate. Our dedicated team is here to support your educational journey.
+                </p>
+            </div>
+
+            <!-- Quick Links - Adjust Links for Each Page -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/admin_portal.html">Admin Portal</a></li>
+                    <li><a href="/academics.html">Academics</a></li>
+                    <li><a href="/news_events.html">News & Events</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/student_portal.html">Student Portal</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Form (Only on Contact Page) -->
+            <div class="footer-column contact-form" id="footer-contact-form">
+                <h3>Contact Us</h3>
+                <form action="/send-message" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="3" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-column">
+                <h3>Connect with Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ishindo Foundation. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

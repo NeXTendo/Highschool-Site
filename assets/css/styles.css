@@ -1,0 +1,201 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: #005B96; /* Blue background */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header .logo span {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #FFD700; /* Gold hover effect */
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #006F98;
+    color: white;
+    position: relative;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.hero-img {
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 1rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    padding: 0.5rem 1rem;
+    background-color: #005B96;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #00406B;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+footer .footer-column h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+footer .footer-column p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+footer .footer-column ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+footer .footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer .social-icons a {
+    margin-right: 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+footer .footer-bottom p {
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Favicon icon styles for interactive pages */
+.fav-icon {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: #005B96;
+    color: white;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.fav-icon:hover {
+    background-color: #FFD700;
+}

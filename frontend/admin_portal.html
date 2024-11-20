@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Admin Panel</div>
+            <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+        </div>
+        <nav>
+            <a href="#overview">Overview</a>
+            <a href="#students">Students</a>
+            <a href="#academics">Academics</a>
+            <a href="#events">Events</a>
+            <a href="#reports">Reports</a>
+        </nav>
+    </aside>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content">
+        <header class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <button class="logout-btn">Logout</button>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="card-container">
+            <div class="card card-shadow">
+                <h3>Active Students</h3>
+                <p>1500</p>
+            </div>
+            <div class="card card-shadow">
+                <h3>Events This Month</h3>
+                <p>5</p>
+            </div>
+            <div class="card card-shadow">
+                <h3>New Enrollments</h3>
+                <p>120</p>
+            </div>
+            <div class="card card-shadow">
+                <h3>Pending Tasks</h3>
+                <p>8</p>
+            </div>
+        </section>
+
+        <section id="students" class="card-container auto-size-container">
+            <div class="card">
+                <h2>Students</h2>
+                <!-- Search and Filter Controls -->
+                <div class="controls">
+                    <input type="text" id="searchStudent" placeholder="Search by name or ID" onkeyup="searchStudent()">
+                    <select id="gradeFilter" onchange="filterByGrade()">
+                        <option value="">All Grades</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                    </select>
+                    <button onclick="sortTable('name')">Sort by Name</button>
+                    <button onclick="sortTable('grade')">Sort by Grade</button>
+                </div>
+                <!-- Student Data Table -->
+                <div class="table-container">
+                    <table class="info-table" id="studentTable">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Grade</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023A01</td>
+                                <td>John Doe</td>
+                                <td>11</td>
+                                <td>Active</td>
+                                <td>
+                                    <button onclick="viewDetails('2023A01')">View</button>
+                                    <button onclick="editStudent('2023A01')">Edit</button>
+                                </td>
+                            </tr>
+                            <!-- Additional student rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <section id="academics" class="card-container auto-size-container">
+            <div class="card">
+                <h2>Academics</h2>
+                <p>Manage courses, curriculum updates, and faculty assignments.</p>
+                <div class="controls">
+                    <button onclick="addCourse()">Add Course</button>
+                    <button onclick="assignFaculty()">Assign Faculty</button>
+                </div>
+                <!-- Course Management Table -->
+                <div class="table-container">
+                    <table class="info-table" id="courseTable">
+                        <thead>
+                            <tr>
+                                <th>Course ID</th>
+                                <th>Course Name</th>
+                                <th>Faculty</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CS101</td>
+                                <td>Introduction to Computer Science</td>
+                                <td>Dr. Alice Smith</td>
+                                <td>
+                                    <button onclick="editCourse('CS101')">Edit</button>
+                                    <button onclick="deleteCourse('CS101')">Delete</button>
+                                </td>
+                            </tr>
+                            <!-- Additional course rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <section id="events" class="card-container auto-size-container">
+            <div class="card">
+                <h2>Events</h2>
+                <p>Manage upcoming school events, news, and announcements.</p>
+                <div class="controls">
+                    <button onclick="addEvent()">Add Event</button>
+                    <button onclick="filterEvents()">Filter Events</button>
+                </div>
+                <!-- Events Management Table -->
+                <div class="table-container">
+                    <table class="info-table" id="eventTable">
+                        <thead>
+                            <tr>
+                                <th>Event ID</th>
+                                <th>Event Name</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>EVT001</td>
+                                <td>Annual Science Fair</td>
+                                <td>2024-05-15</td>
+                                <td>Auditorium</td>
+                                <td>
+                                    <button onclick="editEvent('EVT001')">Edit</button>
+                                    <button onclick="deleteEvent('EVT001')">Delete</button>
+                                </td>
+                            </tr>
+                            <!-- Additional event rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="reports" class="card-container fixed-grid">
+    <h2>Reports</h2>
+
+    <!-- Enrollment Trends Card -->
+    <div class="card card-shadow">
+        <h3>Enrollment Trends</h3>
+        <canvas id="enrollmentChart"></canvas>
+    </div>
+
+    <!-- Monthly Revenue Card -->
+    <div class="card card-shadow">
+        <h3>Monthly Revenue</h3>
+        <canvas id="revenueChart"></canvas>
+    </div>
+
+    <!-- Attendance Report Card -->
+    <div class="card card-shadow">
+        <h3>Attendance Report</h3>
+        <p>Summary: 95% average attendance this month</p>
+        <ul>
+            <li>Grade 10: 96%</li>
+            <li>Grade 11: 94%</li>
+            <li>Grade 12: 93%</li>
+        </ul>
+    </div>
+
+    <!-- Performance Summary Card -->
+    <div class="card card-shadow">
+        <h3>Performance Summary</h3>
+        <p>Overall average score: 82%</p>
+        <ul>
+            <li>Math: 85%</li>
+            <li>Science: 78%</li>
+            <li>English: 83%</li>
+        </ul>
+    </div>
+
+    <!-- Graduation Rates Card -->
+    <div class="card card-shadow">
+        <h3>Graduation Rates</h3>
+        <p>90% of students graduated on time in the last academic year.</p>
+        <canvas id="graduationChart"></canvas>
+    </div>
+</section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+</body>
+</html>
